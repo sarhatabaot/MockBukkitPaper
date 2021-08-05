@@ -1,11 +1,14 @@
 package be.seeseemelk.mockbukkit.block.state;
 
+import net.kyori.adventure.text.Component;
+
 import org.bukkit.Material;
 import org.bukkit.block.Barrel;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.loot.LootTable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import be.seeseemelk.mockbukkit.UnimplementedOperationException;
 import be.seeseemelk.mockbukkit.inventory.BarrelInventoryMock;
@@ -76,6 +79,12 @@ public class BarrelMock extends ContainerMock implements Barrel
 	public void close()
 	{
 		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isOpen()
+	{
 		throw new UnimplementedOperationException();
 	}
 

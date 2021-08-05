@@ -20,4 +20,4 @@ gradle.ext.version = '1.7.0'
   This is the name of our MockBukkit artifact, it includes
   the API version of Minecraft we are targeting.
 */
-rootProject.name = 'MockBukkit-' + gradle.ext.apiVersion
+rootProject.name = 'MockBukkitPaper-' + gradle.ext.apiVersion

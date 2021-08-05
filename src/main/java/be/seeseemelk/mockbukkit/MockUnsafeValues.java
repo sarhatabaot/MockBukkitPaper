@@ -1,24 +1,95 @@
 package be.seeseemelk.mockbukkit;
 
+import com.google.common.collect.Multimap;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TranslatableComponent;
+import net.kyori.adventure.text.flattener.ComponentFlattener;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainComponentSerializer;
+
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.UnsafeValues;
 import org.bukkit.advancement.Advancement;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jetbrains.annotations.NotNull;
+
+import io.papermc.paper.inventory.ItemRarity;
 
 @SuppressWarnings("deprecation")
 public class MockUnsafeValues implements UnsafeValues
 {
-
+	private static final Pattern LOCALIZATION_PATTERN = Pattern.compile("%(?:(\\d+)\\$)?s");
+	public static final ComponentFlattener FLATTENER = ComponentFlattener.basic().toBuilder()
+	        .build();
+	public static final LegacyComponentSerializer LEGACY_SECTION_UXRC = LegacyComponentSerializer.builder().flattener(FLATTENER).hexColors().useUnusualXRepeatedCharacterHexFormat().build();
+	public static final PlainComponentSerializer PLAIN = PlainComponentSerializer.builder().flattener(FLATTENER).build();
+	public static final GsonComponentSerializer GSON = GsonComponentSerializer.builder()
+	        /*.legacyHoverEventSerializer(NBTLegacyHoverEventSerializer.INSTANCE)*/
+	        .build();
+	public static final GsonComponentSerializer COLOR_DOWNSAMPLING_GSON = GsonComponentSerializer.builder()
+	        /*.legacyHoverEventSerializer(NBTLegacyHoverEventSerializer.INSTANCE)*/
+	        .downsampleColors()
+	        .build();
 	private final Set<String> compatibleApiVersions = new HashSet<>(Arrays.asList("1.13", "1.14", "1.15", "1.16", "1.17"));
+
+	@Override
+	public ComponentFlattener componentFlattener()
+	{
+		// TODO: Translatable
+		return FLATTENER;
+	}
+
+	@Override
+	public PlainComponentSerializer plainComponentSerializer()
+	{
+		return PLAIN;
+	}
+
+	@Override
+	public GsonComponentSerializer gsonComponentSerializer()
+	{
+		return GSON;
+	}
+
+	@Override
+	public GsonComponentSerializer colorDownsamplingGsonComponentSerializer()
+	{
+		return COLOR_DOWNSAMPLING_GSON;
+	}
+
+	@Override
+	public LegacyComponentSerializer legacyComponentSerializer()
+	{
+		return LEGACY_SECTION_UXRC;
+	}
+
+	@Override
+	public void reportTimings()
+	{
+
+	}
 
 	@Override
 	public Material toLegacy(Material material)
@@ -98,6 +169,90 @@ public class MockUnsafeValues implements UnsafeValues
 	{
 		// TODO Auto-generated method stub
 		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTimingsServerName()
+	{
+		return null;
+	}
+
+	@Override
+	public boolean isSupportedApiVersion(String apiVersion)
+	{
+		return false;
+	}
+
+	@Override
+	public byte[] serializeItem(ItemStack item)
+	{
+		return new byte[0];
+	}
+
+	@Override
+	public ItemStack deserializeItem(byte[] data)
+	{
+		return null;
+	}
+
+	@Override
+	public String getTranslationKey(Material mat)
+	{
+		return null;
+	}
+
+	@Override
+	public String getTranslationKey(Block block)
+	{
+		return null;
+	}
+
+	@Override
+	public String getTranslationKey(EntityType type)
+	{
+		return null;
+	}
+
+	@Override
+	public String getTranslationKey(ItemStack itemStack)
+	{
+		return null;
+	}
+
+	@Override
+	public int nextEntityId()
+	{
+		return 0;
+	}
+
+	@Override
+	public ItemRarity getItemRarity(Material material)
+	{
+		return null;
+	}
+
+	@Override
+	public ItemRarity getItemStackRarity(ItemStack itemStack)
+	{
+		return null;
+	}
+
+	@Override
+	public boolean isValidRepairItemStack(@NotNull ItemStack itemToBeRepaired, @NotNull ItemStack repairMaterial)
+	{
+		return false;
+	}
+
+	@Override
+	public @NotNull Multimap<Attribute, AttributeModifier> getItemAttributes(@NotNull Material material, @NotNull EquipmentSlot equipmentSlot)
+	{
+		return null;
+	}
+
+	@Override
+	public int getProtocolVersion()
+	{
+		return 0;
 	}
 
 	@Override

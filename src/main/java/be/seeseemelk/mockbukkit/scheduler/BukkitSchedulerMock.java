@@ -3,6 +3,7 @@ package be.seeseemelk.mockbukkit.scheduler;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -358,6 +359,19 @@ public class BukkitSchedulerMock implements BukkitScheduler
 	public @NotNull BukkitTask runTaskTimerAsynchronously(@NotNull Plugin plugin, @NotNull BukkitRunnable task, long delay, long period)
 	{
 		return runTaskTimerAsynchronously(plugin, (Runnable) task, delay, period);
+	}
+
+	@Override
+	public @NotNull Executor getMainThreadExecutor(@NotNull Plugin plugin)
+	{
+		return new Executor()
+		{
+			@Override
+			public void execute(@NotNull Runnable runnable)
+			{
+				runTask(plugin, runnable);
+			}
+		};
 	}
 
 	class AsyncRunnable implements Runnable

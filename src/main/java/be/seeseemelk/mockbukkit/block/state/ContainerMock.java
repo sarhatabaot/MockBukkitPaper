@@ -1,5 +1,8 @@
 package be.seeseemelk.mockbukkit.block.state;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -95,5 +98,17 @@ public abstract class ContainerMock extends TileStateMock implements Container
 	public Inventory getSnapshotInventory()
 	{
 		return ((InventoryMock) inventory).getSnapshot();
+	}
+
+	@Override
+	public @Nullable Component customName()
+	{
+		return LegacyComponentSerializer.legacySection().deserialize(customName);
+	}
+
+	@Override
+	public void customName(@Nullable Component customName)
+	{
+		this.customName = LegacyComponentSerializer.legacySection().serialize(customName);
 	}
 }

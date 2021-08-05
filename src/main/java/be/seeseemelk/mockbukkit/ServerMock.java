@@ -1,5 +1,8 @@
 package be.seeseemelk.mockbukkit;
 
+import com.destroystokyo.paper.entity.ai.MobGoals;
+import com.destroystokyo.paper.profile.PlayerProfile;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -61,6 +64,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.generator.ChunkGenerator.ChunkData;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemFactory;
 import org.bukkit.inventory.ItemStack;
@@ -105,6 +109,12 @@ import be.seeseemelk.mockbukkit.services.ServicesManagerMock;
 import be.seeseemelk.mockbukkit.tags.TagRegistry;
 import be.seeseemelk.mockbukkit.tags.TagWrapperMock;
 import be.seeseemelk.mockbukkit.tags.TagsMock;
+import io.papermc.paper.datapack.DatapackManager;
+
+import net.kyori.adventure.audience.Audience;
+import net.kyori.adventure.audience.ForwardingAudience;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.jetbrains.annotations.Nullable;
 
@@ -432,6 +442,12 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @NotNull String getMinecraftVersion()
+	{
+		return BUKKIT_VERSION;
+	}
+
+	@Override
 	public Collection<? extends PlayerMock> getOnlinePlayers()
 	{
 		return playerList.getOnlinePlayers();
@@ -465,6 +481,12 @@ public class ServerMock extends Server.Spigot implements Server
 	public Player getPlayer(UUID id)
 	{
 		return playerList.getPlayer(id);
+	}
+
+	@Override
+	public @Nullable UUID getPlayerUniqueId(@NotNull String playerName)
+	{
+		return null;
 	}
 
 	@Override
@@ -584,6 +606,12 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @NotNull InventoryMock createInventory(@Nullable InventoryHolder owner, @NotNull InventoryType type, @NotNull Component title)
+	{
+		return createInventory(owner, type, LegacyComponentSerializer.legacySection().serialize(title));
+	}
+
+	@Override
 	public InventoryMock createInventory(InventoryHolder owner, InventoryType type, String title)
 	{
 		return createInventory(owner, type, title, -1);
@@ -596,9 +624,21 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @NotNull Inventory createInventory(@Nullable InventoryHolder owner, int size, @NotNull Component title) throws IllegalArgumentException
+	{
+		return createInventory(owner, size, LegacyComponentSerializer.legacySection().serialize(title));
+	}
+
+	@Override
 	public InventoryMock createInventory(InventoryHolder owner, int size, String title)
 	{
 		return createInventory(owner, InventoryType.CHEST, title, size);
+	}
+
+	@Override
+	public @NotNull Merchant createMerchant(@Nullable Component title)
+	{
+		return null;
 	}
 
 	@Override
@@ -626,6 +666,12 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @Nullable World getWorld(@NotNull NamespacedKey worldKey)
+	{
+		return worlds.stream().filter(world -> world.getKey().equals(worldKey)).findAny().orElse(null);
+	}
+
+	@Override
 	public BukkitSchedulerMock getScheduler()
 	{
 		return scheduler;
@@ -635,6 +681,12 @@ public class ServerMock extends Server.Spigot implements Server
 	public int getMaxPlayers()
 	{
 		return playerList.getMaxPlayers();
+	}
+
+	@Override
+	public void setMaxPlayers(int maxPlayers)
+	{
+		playerList.setMaxPlayers(maxPlayers);
 	}
 
 	@Override
@@ -719,6 +771,18 @@ public class ServerMock extends Server.Spigot implements Server
 		}
 
 		return count;
+	}
+
+	@Override
+	public int broadcast(@NotNull Component message)
+	{
+		return broadcastMessage(LegacyComponentSerializer.legacySection().serialize(message));
+	}
+
+	@Override
+	public int broadcast(@NotNull Component message, @NotNull String permission)
+	{
+		return broadcast(LegacyComponentSerializer.legacySection().serialize(message), permission);
 	}
 
 	/**
@@ -1102,6 +1166,12 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @Nullable OfflinePlayer getOfflinePlayerIfCached(@NotNull String name)
+	{
+		return playerList.getOfflinePlayer(name);
+	}
+
+	@Override
 	public OfflinePlayer getOfflinePlayer(UUID id)
 	{
 		OfflinePlayer player = playerList.getOfflinePlayer(id);
@@ -1179,9 +1249,21 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @NotNull Component motd()
+	{
+		return LegacyComponentSerializer.legacySection().deserialize(getMotd());
+	}
+
+	@Override
 	public String getMotd()
 	{
 		return MOTD;
+	}
+
+	@Override
+	public @Nullable Component shutdownMessage()
+	{
+		throw new UnimplementedOperationException();
 	}
 
 	@Override
@@ -1246,6 +1328,13 @@ public class ServerMock extends Server.Spigot implements Server
 	}
 
 	@Override
+	public @NotNull ChunkData createVanillaChunkData(@NotNull World world, int x, int z)
+	{
+		// TODO
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
 	public BossBar createBossBar(String title, BarColor color, BarStyle style, BarFlag... flags)
 	{
 		return new BossBarMock(title, color, style, flags);
@@ -1256,6 +1345,24 @@ public class ServerMock extends Server.Spigot implements Server
 	{
 		// TODO Auto-generated method stub
 		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull double[] getTPS()
+	{
+		return new double[] {20, 20, 20};
+	}
+
+	@Override
+	public @NotNull long[] getTickTimes()
+	{
+		return new long[] {20_000, 20_000, 20_000};
+	}
+
+	@Override
+	public double getAverageTickTime()
+	{
+		return 20;
 	}
 
 	@Override
@@ -1538,6 +1645,72 @@ public class ServerMock extends Server.Spigot implements Server
 		return this;
 	}
 
+	@Override
+	public void reloadPermissions()
+	{
+
+	}
+
+	@Override
+	public boolean reloadCommandAliases()
+	{
+		return false;
+	}
+
+	@Override
+	public boolean suggestPlayerNamesWhenNullTabCompletions()
+	{
+		return false;
+	}
+
+	@Override
+	public @NotNull String getPermissionMessage()
+	{
+		return "&cI'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.";
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@NotNull UUID uuid)
+	{
+		return null;
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@NotNull String name)
+	{
+		return null;
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@Nullable UUID uuid, @Nullable String name)
+	{
+		return null;
+	}
+
+	@Override
+	public int getCurrentTick()
+	{
+		return 0;
+	}
+
+	@Override
+	public boolean isStopping()
+	{
+		return false;
+	}
+
+	@Override
+	public @NotNull MobGoals getMobGoals()
+	{
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull DatapackManager getDatapackManager()
+	{
+		throw new UnimplementedOperationException();
+	}
+
 	// Methods from Server.Spigot:
 
 	@NotNull
@@ -1570,5 +1743,11 @@ public class ServerMock extends Server.Spigot implements Server
 	public void restart()
 	{
 		throw new UnsupportedOperationException("Not supported.");
+	}
+
+	@Override
+	public @NotNull Iterable<? extends Audience> audiences()
+	{
+		throw new UnimplementedOperationException();
 	}
 }
