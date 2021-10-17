@@ -13,6 +13,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.destroystokyo.paper.Namespaced;
+import net.kyori.adventure.text.Component;
+import net.md_5.bungee.api.chat.BaseComponent;
+import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
@@ -677,6 +681,115 @@ public class ItemMetaMock implements ItemMeta, Damageable, Repairable
 	@Override
 	public void setVersion(int version)
 	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Component displayName() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void displayName(@Nullable final Component displayName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull BaseComponent[] getDisplayNameComponent() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setDisplayNameComponent(final @Nullable BaseComponent[] component) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable List<Component> lore() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void lore(@Nullable final List<Component> lore) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable List<BaseComponent[]> getLoreComponents() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setLoreComponents(@Nullable final List<BaseComponent[]> lore) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public Set<Material> getCanDestroy() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setCanDestroy(final Set<Material> canDestroy) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public Set<Material> getCanPlaceOn() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setCanPlaceOn(final Set<Material> canPlaceOn) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Set<Namespaced> getDestroyableKeys() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setDestroyableKeys(@NotNull final Collection<Namespaced> canDestroy) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Set<Namespaced> getPlaceableKeys() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@NotNull
+	@Override
+	public void setPlaceableKeys(@NotNull final Collection<Namespaced> canPlaceOn) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasPlaceableKeys() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasDestroyableKeys() {
 		// TODO Auto-generated method stub
 		throw new UnimplementedOperationException();
 	}

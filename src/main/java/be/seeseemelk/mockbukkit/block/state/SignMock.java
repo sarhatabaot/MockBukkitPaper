@@ -1,5 +1,6 @@
 package be.seeseemelk.mockbukkit.block.state;
 
+import net.kyori.adventure.text.Component;
 import org.apache.commons.lang.Validate;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -9,6 +10,8 @@ import org.bukkit.block.Sign;
 import org.jetbrains.annotations.NotNull;
 
 import be.seeseemelk.mockbukkit.UnimplementedOperationException;
+
+import java.util.List;
 
 /**
  * This {@link ContainerMock} represents a {@link Sign}.
@@ -116,4 +119,22 @@ public class SignMock extends TileStateMock implements Sign
 		return new SignMock(this);
 	}
 
+
+	@Override
+	public @NotNull List<Component> lines() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Component line(final int index) throws IndexOutOfBoundsException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void line(final int index, @NotNull final Component line) throws IndexOutOfBoundsException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

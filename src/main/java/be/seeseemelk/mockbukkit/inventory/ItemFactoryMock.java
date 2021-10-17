@@ -3,9 +3,15 @@ package be.seeseemelk.mockbukkit.inventory;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
+import java.util.function.UnaryOperator;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.hover.content.Content;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemFactory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -21,6 +27,8 @@ import be.seeseemelk.mockbukkit.inventory.meta.LeatherArmorMetaMock;
 import be.seeseemelk.mockbukkit.inventory.meta.PotionMetaMock;
 import be.seeseemelk.mockbukkit.inventory.meta.SkullMetaMock;
 import be.seeseemelk.mockbukkit.inventory.meta.SuspiciousStewMetaMock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class ItemFactoryMock implements ItemFactory
 {
@@ -143,4 +151,58 @@ public class ItemFactoryMock implements ItemFactory
 		return material;
 	}
 
+
+	@Override
+	public @NotNull HoverEvent<HoverEvent.ShowItem> asHoverEvent(@NotNull final ItemStack item, @NotNull final UnaryOperator<HoverEvent.ShowItem> op) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Component displayName(@NotNull final ItemStack itemStack) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable String getI18NDisplayName(@Nullable final ItemStack item) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull ItemStack ensureServerConversions(@NotNull final ItemStack item) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Content hoverContentOf(@NotNull final ItemStack itemStack) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Content hoverContentOf(@NotNull final Entity entity) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Content hoverContentOf(@NotNull final Entity entity, @Nullable final String customName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Content hoverContentOf(@NotNull final Entity entity, @Nullable final BaseComponent customName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Content hoverContentOf(@NotNull final Entity entity, final @NotNull BaseComponent[] customName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

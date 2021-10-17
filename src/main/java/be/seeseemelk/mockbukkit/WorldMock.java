@@ -9,10 +9,13 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import com.destroystokyo.paper.HeightmapType;
+import io.papermc.paper.world.MoonPhase;
 import org.apache.commons.lang.Validate;
 import org.bukkit.BlockChangeDelegate;
 import org.bukkit.Bukkit;
@@ -21,10 +24,12 @@ import org.bukkit.ChunkSnapshot;
 import org.bukkit.Difficulty;
 import org.bukkit.Effect;
 import org.bukkit.FluidCollisionMode;
+import org.bukkit.GameEvent;
 import org.bukkit.GameRule;
 import org.bukkit.HeightMap;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.Particle;
 import org.bukkit.Raid;
 import org.bukkit.Sound;
@@ -48,6 +53,7 @@ import org.bukkit.entity.Item;
 import org.bukkit.entity.LightningStrike;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.world.TimeSkipEvent;
 import org.bukkit.generator.BiomeProvider;
 import org.bukkit.generator.BlockPopulator;
@@ -1893,6 +1899,228 @@ public class WorldMock implements World
 	@Override
 	public long getGameTime()
 	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getEntityCount() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getTileEntityCount() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getTickableTileEntityCount() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getChunkCount() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getPlayerCount() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull MoonPhase getMoonPhase() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean lineOfSightExists(@NotNull final Location from, @NotNull final Location to) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getHighestBlockYAt(final int x, final int z, @NotNull final HeightmapType heightmap) throws UnsupportedOperationException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Location findLightningRod(@NotNull final Location location) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Location findLightningTarget(@NotNull final Location location) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull CompletableFuture<Chunk> getChunkAtAsync(final int x, final int z, final boolean gen, final boolean urgent) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull NamespacedKey getKey() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Entity getEntity(@NotNull final UUID uuid) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isDayTime() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean createExplosion(@Nullable final Entity source, @NotNull final Location loc, final float power, final boolean setFire, final boolean breakBlocks) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public long getTicksPerWaterUndergroundCreatureSpawns() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setTicksPerWaterUndergroundCreatureSpawns(final int ticksPerWaterUndergroundCreatureSpawns) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getWaterUndergroundCreatureSpawnLimit() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setWaterUndergroundCreatureSpawnLimit(final int limit) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public <T> void spawnParticle(@NotNull final Particle particle, @Nullable final List<Player> receivers, @Nullable final Player source, final double x, final double y, final double z, final int count, final double offsetX, final double offsetY, final double offsetZ, final double extra, @Nullable final T data, final boolean force) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Location locateNearestBiome(@NotNull final Location origin, @NotNull final Biome biome, final int radius) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Location locateNearestBiome(@NotNull final Location origin, @NotNull final Biome biome, final int radius, final int step) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isUltrawarm() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public double getCoordinateScale() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasSkylight() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasBedrockCeiling() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean doesBedWork() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean doesRespawnAnchorWork() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isFixedTime() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Collection<Material> getInfiniburn() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void sendGameEvent(@Nullable final Entity sourceEntity, @NotNull final GameEvent gameEvent, @NotNull final Vector position) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setViewDistance(final int viewDistance) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getNoTickViewDistance() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setNoTickViewDistance(final int viewDistance) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getSendViewDistance() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setSendViewDistance(final int viewDistance) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public <T extends Entity> @NotNull T spawn(@NotNull final Location location, @NotNull final Class<T> clazz, @Nullable final Consumer<T> function, final CreatureSpawnEvent.@NotNull SpawnReason reason) throws IllegalArgumentException {
 		// TODO Auto-generated method stub
 		throw new UnimplementedOperationException();
 	}

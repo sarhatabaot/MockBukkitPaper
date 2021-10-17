@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -543,5 +544,11 @@ public class BukkitSchedulerMock implements BukkitScheduler
 			}
 			return false;
 		}
+	}
+
+	@Override
+	public @NotNull Executor getMainThreadExecutor(@NotNull final Plugin plugin) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
 	}
 }

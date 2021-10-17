@@ -2,6 +2,8 @@ package be.seeseemelk.mockbukkit.inventory.meta;
 
 import java.util.Objects;
 
+import be.seeseemelk.mockbukkit.UnimplementedOperationException;
+import com.destroystokyo.paper.profile.PlayerProfile;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -9,6 +11,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import com.google.common.base.Strings;
 
 import be.seeseemelk.mockbukkit.entity.OfflinePlayerMock;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An {@link ItemMetaMock} for the {@link SkullMeta} interface. The owning {@link Player} is stored via his name.
@@ -107,5 +110,17 @@ public class SkullMetaMock extends ItemMetaMock implements SkullMeta
 
 		// CraftBukkits implementation also always returns true too, so there we go
 		return true;
+	}
+
+	@Override
+	public void setPlayerProfile(@Nullable final PlayerProfile profile) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable PlayerProfile getPlayerProfile() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
 	}
 }

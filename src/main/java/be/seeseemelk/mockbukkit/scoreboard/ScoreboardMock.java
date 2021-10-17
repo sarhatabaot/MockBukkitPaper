@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import be.seeseemelk.mockbukkit.UnimplementedOperationException;
+import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
@@ -16,6 +18,7 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class ScoreboardMock implements Scoreboard
 {
@@ -204,4 +207,15 @@ public class ScoreboardMock implements Scoreboard
 		objectives.remove(objectiveMock.getName());
 	}
 
+	@Override
+	public @NotNull Objective registerNewObjective(@NotNull final String name, @NotNull final String criteria, @Nullable final Component displayName) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Objective registerNewObjective(@NotNull final String name, @NotNull final String criteria, @Nullable final Component displayName, @NotNull final RenderType renderType) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

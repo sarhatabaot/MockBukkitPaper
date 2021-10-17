@@ -4,15 +4,27 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.google.common.collect.Multimap;
+import io.papermc.paper.inventory.ItemRarity;
+import net.kyori.adventure.text.flattener.ComponentFlattener;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.UnsafeValues;
 import org.bukkit.advancement.Advancement;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
 public class MockUnsafeValues implements UnsafeValues
@@ -107,4 +119,123 @@ public class MockUnsafeValues implements UnsafeValues
 		throw new UnimplementedOperationException();
 	}
 
+	@Override
+	public ComponentFlattener componentFlattener() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public PlainComponentSerializer plainComponentSerializer() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public GsonComponentSerializer gsonComponentSerializer() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public GsonComponentSerializer colorDownsamplingGsonComponentSerializer() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public LegacyComponentSerializer legacyComponentSerializer() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void reportTimings() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTimingsServerName() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isSupportedApiVersion(final String apiVersion) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public byte[] serializeItem(final ItemStack item) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public ItemStack deserializeItem(final byte[] data) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTranslationKey(final Material mat) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTranslationKey(final Block block) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTranslationKey(final EntityType type) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public String getTranslationKey(final ItemStack itemStack) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int nextEntityId() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public ItemRarity getItemRarity(final Material material) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public ItemRarity getItemStackRarity(final ItemStack itemStack) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isValidRepairItemStack(@NotNull final ItemStack itemToBeRepaired, @NotNull final ItemStack repairMaterial) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Multimap<Attribute, AttributeModifier> getItemAttributes(@NotNull final Material material, @NotNull final EquipmentSlot equipmentSlot) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getProtocolVersion() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

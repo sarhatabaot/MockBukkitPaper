@@ -356,4 +356,16 @@ public class EntityEquipmentMock implements EntityEquipment
 		return holder;
 	}
 
+
+	@Override
+	public float getDropChance(@NotNull final EquipmentSlot slot) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setDropChance(@NotNull final EquipmentSlot slot, final float chance) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

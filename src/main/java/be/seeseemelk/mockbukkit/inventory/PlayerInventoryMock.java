@@ -1,6 +1,7 @@
 package be.seeseemelk.mockbukkit.inventory;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
 
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
@@ -250,5 +251,11 @@ public class PlayerInventoryMock extends InventoryMock implements PlayerInventor
 	private @NotNull ItemStack notNull(@Nullable ItemStack itemStack)
 	{
 		return itemStack == null ? new ItemStack(Material.AIR) : itemStack;
+	}
+
+	@Override
+	public void forEach(final Consumer<? super ItemStack> action) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
 	}
 }

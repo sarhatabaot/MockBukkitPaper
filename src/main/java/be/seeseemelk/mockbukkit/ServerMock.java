@@ -23,6 +23,11 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import be.seeseemelk.mockbukkit.block.data.BlockDataMock;
+import com.destroystokyo.paper.entity.ai.MobGoals;
+import com.destroystokyo.paper.profile.PlayerProfile;
+import io.papermc.paper.datapack.DatapackManager;
+import net.kyori.adventure.audience.Audience;
+import net.kyori.adventure.text.Component;
 import org.apache.commons.lang.Validate;
 import org.bukkit.BanEntry;
 import org.bukkit.BanList;
@@ -61,6 +66,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.generator.ChunkGenerator.ChunkData;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemFactory;
 import org.bukkit.inventory.ItemStack;
@@ -71,6 +77,7 @@ import org.bukkit.map.MapView;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.messaging.Messenger;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.structure.StructureManager;
 import org.bukkit.util.CachedServerIcon;
 import org.jetbrains.annotations.NotNull;
 
@@ -1569,5 +1576,197 @@ public class ServerMock extends Server.Spigot implements Server
 	public void restart()
 	{
 		throw new UnsupportedOperationException("Not supported.");
+	}
+
+	@Override
+	public @NotNull String getMinecraftVersion() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void setMaxPlayers(final int maxPlayers) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getTicksPerWaterUndergroundCreatureSpawns() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable UUID getPlayerUniqueId(@NotNull final String playerName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable World getWorld(@NotNull final NamespacedKey worldKey) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int broadcast(@NotNull final Component message) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int broadcast(@NotNull final Component message, @NotNull final String permission) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable OfflinePlayer getOfflinePlayerIfCached(@NotNull final String name) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Inventory createInventory(@Nullable final InventoryHolder owner, @NotNull final InventoryType type, @NotNull final Component title) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Inventory createInventory(@Nullable final InventoryHolder owner, final int size, @NotNull final Component title) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Merchant createMerchant(@Nullable final Component title) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getWaterUndergroundCreatureSpawnLimit() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Component motd() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Component shutdownMessage() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull ChunkData createVanillaChunkData(@NotNull final World world, final int x, final int z) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull double[] getTPS() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull long[] getTickTimes() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public double getAverageTickTime() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull StructureManager getStructureManager() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void reloadPermissions() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean reloadCommandAliases() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean suggestPlayerNamesWhenNullTabCompletions() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull String getPermissionMessage() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@NotNull final UUID uuid) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@NotNull final String name) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull PlayerProfile createProfile(@Nullable final UUID uuid, @Nullable final String name) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int getCurrentTick() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull File getPluginsFolder() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isStopping() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull MobGoals getMobGoals() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull DatapackManager getDatapackManager() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull Iterable<? extends Audience> audiences() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
 	}
 }

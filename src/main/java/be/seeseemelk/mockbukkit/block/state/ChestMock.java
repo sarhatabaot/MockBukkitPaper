@@ -1,5 +1,6 @@
 package be.seeseemelk.mockbukkit.block.state;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -11,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import be.seeseemelk.mockbukkit.UnimplementedOperationException;
 import be.seeseemelk.mockbukkit.inventory.ChestInventoryMock;
 import be.seeseemelk.mockbukkit.inventory.InventoryMock;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.UUID;
 
 /**
  * This {@link ContainerMock} represents a {@link Chest} or Trapped {@link Chest}.
@@ -96,4 +100,75 @@ public class ChestMock extends ContainerMock implements Chest
 		return new ChestMock(this);
 	}
 
+	@Override
+	public boolean isRefillEnabled() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasBeenFilled() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasPlayerLooted(@NotNull final UUID player) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Long getLastLooted(@NotNull final UUID player) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean setHasPlayerLooted(@NotNull final UUID player, final boolean looted) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean hasPendingRefill() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public long getLastFilled() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public long getNextRefill() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public long setNextRefill(final long refillAt) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable Component customName() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void customName(@Nullable final Component customName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isOpen() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

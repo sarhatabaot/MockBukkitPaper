@@ -1,5 +1,6 @@
 package be.seeseemelk.mockbukkit.block.state;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.block.Barrel;
 import org.bukkit.block.Block;
@@ -10,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import be.seeseemelk.mockbukkit.UnimplementedOperationException;
 import be.seeseemelk.mockbukkit.inventory.BarrelInventoryMock;
 import be.seeseemelk.mockbukkit.inventory.InventoryMock;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This {@link ContainerMock} represents a {@link Barrel}
@@ -91,4 +93,21 @@ public class BarrelMock extends ContainerMock implements Barrel
 		return new BarrelMock(this);
 	}
 
+	@Override
+	public @Nullable Component customName() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void customName(@Nullable final Component customName) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isOpen() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

@@ -435,4 +435,21 @@ public class InventoryMock implements Inventory
 		return inventory;
 	}
 
+	@Override
+	public @NotNull HashMap<Integer, ItemStack> removeItemAnySlot(final @NotNull ItemStack... items) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public int close() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @Nullable InventoryHolder getHolder(final boolean useSnapshot) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }

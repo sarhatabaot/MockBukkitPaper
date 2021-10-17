@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.util.Collection;
 import java.util.List;
 
+import com.destroystokyo.paper.block.BlockSoundGroup;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Chunk;
 import org.bukkit.FluidCollisionMode;
@@ -459,6 +460,79 @@ public class BlockMock implements Block
 	@Override
 	public float getBreakSpeed(@NotNull Player player)
 	{
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+
+	@Override
+	public boolean isValidTool(@NotNull final ItemStack itemStack) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull BlockState getState(final boolean useSnapshot) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isBuildable() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isBurnable() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isReplaceable() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean isSolid() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean breakNaturally(final boolean triggerEffect) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public boolean breakNaturally(@NotNull final ItemStack tool, final boolean triggerEffect) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull BlockSoundGroup getSoundGroup() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull String getTranslationKey() {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull float getDestroySpeed(@NotNull final ItemStack itemStack, final boolean considerEnchants) {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public @NotNull String translationKey() {
 		// TODO Auto-generated method stub
 		throw new UnimplementedOperationException();
 	}

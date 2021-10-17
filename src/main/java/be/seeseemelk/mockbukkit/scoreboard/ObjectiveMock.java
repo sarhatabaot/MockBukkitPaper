@@ -3,6 +3,7 @@ package be.seeseemelk.mockbukkit.scoreboard;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.kyori.adventure.text.Component;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -175,4 +176,15 @@ public class ObjectiveMock implements Objective
 		throw new UnimplementedOperationException();
 	}
 
+	@Override
+	public @NotNull Component displayName() throws IllegalStateException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
+
+	@Override
+	public void displayName(@Nullable final Component displayName) throws IllegalStateException, IllegalArgumentException {
+		// TODO Auto-generated method stub
+		throw new UnimplementedOperationException();
+	}
 }
